@@ -9,15 +9,14 @@ import SignUp from "./Components/SignUp.jsx";
 import SignIn from "./Components/SignIn.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
 import Users from "./Components/Users.jsx";
+import Swiper from "swiper";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
     loader: () =>
-      fetch(
-        "https://espresso-emporium-server-4xbrbqdyz-naiem-hasans-projects.vercel.app//coffee"
-      ),
+      fetch("https://espresso-emporium-server-one.vercel.app/coffee"),
   },
   {
     path: "/addCoffee",
@@ -28,7 +27,7 @@ const router = createBrowserRouter([
     element: <UpdateCoffee></UpdateCoffee>,
     loader: ({ params }) =>
       fetch(
-        `https://espresso-emporium-server-4xbrbqdyz-naiem-hasans-projects.vercel.app//coffee/${params.id}`
+        `https://espresso-emporium-server-one.vercel.app/coffee/${params.id}`
       ),
   },
   {
@@ -42,10 +41,7 @@ const router = createBrowserRouter([
   {
     path: "/users",
     element: <Users></Users>,
-    loader: () =>
-      fetch(
-        "https://espresso-emporium-server-4xbrbqdyz-naiem-hasans-projects.vercel.app//user"
-      ),
+    loader: () => fetch("https://espresso-emporium-server-one.vercel.app/user"),
   },
 ]);
 

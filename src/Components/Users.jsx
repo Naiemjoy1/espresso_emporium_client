@@ -7,12 +7,9 @@ const Users = () => {
   const [users, setUsers] = useState(loadedUsers);
 
   const handleDelete = (id) => {
-    fetch(
-      `https://espresso-emporium-server-4xbrbqdyz-naiem-hasans-projects.vercel.app//user/${id}`,
-      {
-        method: "DELETE",
-      }
-    )
+    fetch(`https://espresso-emporium-server-one.vercel.app/user/${id}`, {
+      method: "DELETE",
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.deletedCount > 0) {

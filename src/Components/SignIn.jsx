@@ -18,16 +18,13 @@ const SignIn = () => {
           lastLoggedAt: result.user?.metadata?.lastSignInTime,
         };
         // update last logged at in the database
-        fetch(
-          "https://espresso-emporium-server-4xbrbqdyz-naiem-hasans-projects.vercel.app//user",
-          {
-            method: "PATCH",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(user),
-          }
-        )
+        fetch("https://espresso-emporium-server-one.vercel.app/user", {
+          method: "PATCH",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

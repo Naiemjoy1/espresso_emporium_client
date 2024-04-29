@@ -17,16 +17,13 @@ const SignUp = () => {
         const createdAt = result.user?.metadata?.creationTime;
 
         const user = { email, createdAt: createdAt };
-        fetch(
-          "https://espresso-emporium-server-4xbrbqdyz-naiem-hasans-projects.vercel.app//user",
-          {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(user),
-          }
-        )
+        fetch("https://espresso-emporium-server-one.vercel.app/user", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        })
           .then((res) => res.json())
           .then((data) => {
             if (data.insertedId) {

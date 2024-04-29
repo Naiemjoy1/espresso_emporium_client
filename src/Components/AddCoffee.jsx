@@ -17,16 +17,13 @@ const AddCoffee = () => {
     console.log(newCoffee);
 
     // send data to the server
-    fetch(
-      "https://espresso-emporium-server-4xbrbqdyz-naiem-hasans-projects.vercel.app//coffee",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(newCoffee),
-      }
-    )
+    fetch("https://espresso-emporium-server-one.vercel.app/coffee", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newCoffee),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

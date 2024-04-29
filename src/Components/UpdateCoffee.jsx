@@ -26,16 +26,13 @@ const UpdateCoffee = () => {
     console.log(updatedCoffee);
 
     // send data to the server
-    fetch(
-      `https://espresso-emporium-server-4xbrbqdyz-naiem-hasans-projects.vercel.app//coffee/${_id}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(updatedCoffee),
-      }
-    )
+    fetch(`https://espresso-emporium-server-one.vercel.app/coffee/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedCoffee),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
